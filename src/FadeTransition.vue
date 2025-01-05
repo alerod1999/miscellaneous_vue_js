@@ -1,7 +1,7 @@
 <template>
     <div class="relative">
         <!--<Transition name="fadeSlide" mode="out-in">-->
-        <Transition name="fadeSlide">
+        <Transition name="fadeSlide" appear>
         <slot></slot>
     </Transition>
     </div>
