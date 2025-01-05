@@ -1,17 +1,23 @@
 <template>
 
 <button @click="toggleSpoiler">Display / Hide spoiler </button>
-<Transition name="fadeSlide">
+<FadeTransition>
     <div v-if="showSpoiler" class="spoiler">
 At the end of the episode, the main character dies !
 
 </div>
-</Transition>
+
+<div v-else class="spoiler">
+This button displays spoiler.
+
+</div>
+</FadeTransition>
 
 
 </template>
 <script setup>
 import { ref } from 'vue';
+import FadeTransition from './FadeTransition.vue';
 
 const showSpoiler = ref(false)
 const toggleSpoiler = () => showSpoiler.value = !showSpoiler.value
@@ -22,9 +28,6 @@ const toggleSpoiler = () => showSpoiler.value = !showSpoiler.value
     border: 1px solid white;
     transition: .5s;
 }
-.fadeSlide-enter-from,
-.fadeSlide-leave-to {
-    opacity: 0;
-}
+
 
 </style>
